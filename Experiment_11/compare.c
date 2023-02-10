@@ -1,0 +1,42 @@
+/*
+        4. to compare one string with another to know are both same or not
+*/
+
+#include <stdio.h>  
+int compare(char[],char[]);  
+void main() {
+    printf("\n<<<<<---------Compare String----------->>>>>");
+    char str1[20];
+    char str2[20];
+    
+    printf("Enter the first string : ");
+    scanf("%s",str1);
+    
+    printf("Enter the second string : ");
+    scanf("%s",str2);
+    
+    int c= compare(str1,str2);
+    if(c==0){
+        printf("strings are same!"); 
+    }else{
+        printf("strings are not same");
+    }
+
+}  
+  
+  
+int compare(char a[],char b[]){
+    int flag = 0, i = 0;
+    while(a[i] != '\0' && b[i] != '\0'){
+        if(a[i] != b[i]){
+            flag = 1;
+            break;
+        }
+        i++;  
+    }
+    if(flag == 0){
+        return 0;
+    }else{
+        return 1;
+    }
+}
